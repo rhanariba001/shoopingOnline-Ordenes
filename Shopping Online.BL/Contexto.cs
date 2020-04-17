@@ -18,6 +18,7 @@ namespace Shopping_Online.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio()); //Agregar datos de inicio//
            
         }
 
@@ -26,5 +27,6 @@ namespace Shopping_Online.BL
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Orden> Ordenes { get; set; }
         public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

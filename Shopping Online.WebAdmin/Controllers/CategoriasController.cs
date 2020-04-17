@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Shopping_Online.WebAdmin.Controllers
 {
+    [Authorize]
     public class CategoriasController : Controller
     {
 

@@ -7,30 +7,31 @@ using System.Web.Mvc;
 
 namespace Shopping_Online.WebAdmin.Controllers
 {
-
     [Authorize]
     public class ClientesController : Controller
     {
-            ClientesBL _clientesBL;
+        ClientesBL _clientesBL;
 
-            public ClientesController()
-            {
-                _clientesBL = new ClientesBL();
-            }
+        public ClientesController()
+        {
+            _clientesBL = new ClientesBL();
+        }
 
-            // GET: Clientes
-            public ActionResult Index()
-            {
-                var listadeClientes = _clientesBL.ObtenerClientes();
+        // GET: Clientes
+        public ActionResult Index()
+        {
+            var listadeClientes = _clientesBL.ObtenerClientes();
 
-                return View(listadeClientes);
-            }
+            return View(listadeClientes);
+        }
+
         public ActionResult Crear()
         {
             var nuevoCliente = new Cliente();
 
             return View(nuevoCliente);
         }
+
         [HttpPost]
         public ActionResult Crear(Cliente cliente)
         {
@@ -43,6 +44,7 @@ namespace Shopping_Online.WebAdmin.Controllers
 
             return View(cliente);
         }
+
         public ActionResult Editar(int id)
         {
             var cliente = _clientesBL.ObtenerCliente(id);
@@ -62,6 +64,7 @@ namespace Shopping_Online.WebAdmin.Controllers
 
             return View(cliente);
         }
+
         public ActionResult Detalle(int id)
         {
             var cliente = _clientesBL.ObtenerCliente(id);

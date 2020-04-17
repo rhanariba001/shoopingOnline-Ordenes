@@ -17,11 +17,11 @@ namespace Shopping_Online.BL
 
         [Display(Name = "Descripción")]
         [Required(ErrorMessage = "Ingrese la Descripcion")]
-        [MinLength(3, ErrorMessage = "Ingrese minimo 3 caracteres")]
-        [MaxLength(20, ErrorMessage = "Ingrese un maximo de 20 caracteres")]
+        [MinLength(5, ErrorMessage = "Ingrese minimo 5 caracteres")]
+        [MaxLength(50, ErrorMessage = "Ingrese un maximo de 50 caracteres")]
         public string  Descripcion { get; set; }
         [Required(ErrorMessage = "Ingrese el Precio")]
-        [Range(0, 1000 ,ErrorMessage ="Ingrese un Precio entre 0 y 1000")]
+        [Range(0, 100000 ,ErrorMessage ="Ingrese un Precio entre 0 y 100000")]
 
         public double  Precio { get; set; }
         public int CategoriaId { get; set; }

@@ -19,7 +19,9 @@ namespace Shopping_Online.BL
         }
         public List<Producto> ObtenerProductos()
         {
-           ListaDeProductos = _contexto.Productos.Include("Categoria").ToList();
+           ListaDeProductos = _contexto.Productos.Include("Categoria")
+                .OrderBy(r => r.categoria.Descripcion)
+                .ThenBy(r => r.Descripcion).ToList();
 
            
 
